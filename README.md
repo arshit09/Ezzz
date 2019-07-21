@@ -1,0 +1,2 @@
+# Ezzz
+Kali Linux Tool
