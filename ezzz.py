@@ -12,7 +12,9 @@ class color:
    UNDERLINE = '\033[4m'
    END = '\033[0m'
 
-print(color.YELLOW + color.BOLD + "\n-------------------- Welcome to Ezzz --------------------\n")
+print(" _____\n| ____|____________\n|  _| |_  /_  /_  /\n| |___ / / / / / /_____ \n|_____/___/___/________>")
+#Easy to use Kali Linux Hacking Tool!
+print(color.YELLOW + color.BOLD + "\n---------------------- Welcome to Ezzz ----------------------\n")
 print(color.GREEN + "1) Create Payload")
 print("2) Start Listener")
 print("3) Other Useful Tools")
