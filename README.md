@@ -1,11 +1,11 @@
 # Ezzz - Kali Linux Tool
 
-<font color="red"><b>DISCLAIMER: Ezzz tool is only for testing purposes and can only be used where strict consent has been given. Do not use this for any illegal/unethical purposes.</b></font>
+DISCLAIMER: Ezzz tool is only for testing purposes and can only be used where strict consent has been given. Do not use this for any illegal/unethical purposes.
 
-<font color="green"><b>An Easy tool to craft payloads/backdoors.</b></font>
+An Easy tool to craft payloads/backdoors.
 
-Screenshot
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+# Screenshot
+
 
 </b>Getting Started<b>
 ```
