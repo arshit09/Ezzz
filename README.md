@@ -1,5 +1,5 @@
 # Ezzz
-Kali Linux Tool
+<h1>Kali Linux Tool<h1>
 
 <font color="red"><b>DISCLAIMER: Ezzz tool is only for testing purposes and can only be used where strict consent has been given. Do not use this for any illegal/unethical purposes.</b></font>
 
