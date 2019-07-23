@@ -7,7 +7,7 @@ An Easy tool to craft payloads/backdoors.
 # Screenshot
 
 
-</b>Getting Started<b>
+# Getting Started
 ```
 $ git clone https://www.github.com/arshit09/Ezzz.git
 $ cd Ezzz
@@ -16,14 +16,14 @@ $ chmod 777 ezzz.py
 $ python ezzz.py
   ```
 
-How It Works
--Uses msfvenom to create paylaods/backdoors.
+# How It Works
+- Uses **msfvenom** to create paylaods/backdoors.
 
-Operating System Recommended:
+# Operating System Recommended
 - Kali 2017.1 and above
 
-Features
-Ezzz tool allows to create payloads/backdoors without requirements of writting any commands.
+# Features
+- **Ezzz** tool allows to create payloads/backdoors without requirements of writting any commands.
 
-Bugs and Improvements?
-For any bug reporting or improvements, please submit an issue here.
+# Bugs and Improvements?
+- For any bug reporting or improvements, please submit an issue here.
