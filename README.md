@@ -6,7 +6,7 @@ Kali Linux Tool
 <font color="green"><b>An Easy tool to craft payloads/backdoors.</b></font>
 
 Screenshot
-https://placehold.it/15/f03c15/000000?text=saf
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 
 </b>Getting Started<b>
 '''$ git clone https://www.github.com/arshit09/Ezzz.git
