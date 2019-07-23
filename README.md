@@ -1,7 +1,6 @@
 # Ezzz - Kali Linux Tool
 
-:tw-203c:**DISCLAIMER:tw-203c:
-*Ezzz tool is only for testing purposes and can only be used where strict consent has been given. Do not use this for any illegal/unethical purposes.***
+**DISCLAIMER:** ***Ezzz tool is only for testing purposes and can only be used where strict consent has been given. Do not use this for any illegal/unethical purposes.***
 
 An Easy tool to craft payloads/backdoors.
 
