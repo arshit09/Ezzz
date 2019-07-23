@@ -9,11 +9,11 @@ Screenshot
 
 
 </b>Getting Started<b>
-"""$ git clone https://www.github.com/arshit09/Ezzz.git
+'''$ git clone https://www.github.com/arshit09/Ezzz.git
 $ cd Ezzz
 $ chmod +x req.sh
 $ chmod 777 ezzz.py
-$ python ezzz.py"""
+$ python ezzz.py'''
 
 How It Works
 -Uses msfvenom to create paylaods/backdoors.
