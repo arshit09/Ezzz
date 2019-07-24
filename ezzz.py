@@ -1,5 +1,6 @@
 import os
 import sys
+#test for termux
 class color:
    PURPLE = '\033[95m'
    CYAN = '\033[96m'
