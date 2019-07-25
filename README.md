@@ -13,7 +13,7 @@ $ git clone https://www.github.com/arshit09/Ezzz.git
 $ cd Ezzz
 $ chmod +x req.sh
 $ chmod 777 ezzz.py
-$ python ezzz.py
+$ python3 ezzz.py
   ```
 
 # How It Works
