@@ -1,5 +1,6 @@
 import os
 import sys
+os.system('clear')
 #test for termux
 class color:
    PURPLE = '\033[95m'
@@ -23,10 +24,10 @@ print("4) Tools For Fun!\n")
 print("99) Exit\n"+color.END)
 
 val = int(input(color.BOLD+"Select Your Option To Begin Your Journey : "))
-for x in range(44):
-	sys.stdout.write("-")
 
 if val == 1:
+	os.system('clear')
+	print(color.BLUE+"You are at:\nEzzz >  1) Create Payload"+color.END)
 	print(color.YELLOW+color.BOLD+"\nLet's craft some payloads!\nObviously, for that you need to select something..."+color.END)
 	print(color.GREEN + color.BOLD + "\n1) Windows")
 	print("2) Android")
@@ -34,7 +35,7 @@ if val == 1:
 	print("4) Mac")
 	print("5) Create for all of above at once")
 	print("\n99) Exit" + color.END)
-	payload = int(input("Select Option : "))
+	payload = int(input("\nSelect Option : "))
 	if payload == 1:
 		ip = input("Enter IP Address : ")
 		portno = input("Enter Unique Port No : ")
