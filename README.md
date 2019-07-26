@@ -18,6 +18,7 @@ $ python3 ezzz.py
 
 # How It Works
 - Uses **msfvenom** to create paylaods/backdoors.
+- Uses **file.io** to temporary host file for 14 days. 
 
 # Operating System Recommended
 - Kali 2017.1 and above

