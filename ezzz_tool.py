@@ -3,6 +3,7 @@ import sys
 def clear():
 	os.system('clear')
 clear()
+os.system('resize -s 24 80 > /dev/null')
 #-----------------------------------------------------
 def localip():
 	os.system('hostname -I')

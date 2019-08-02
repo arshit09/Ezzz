@@ -21,11 +21,12 @@ def check():
 			if contents[0] == "y" or contents[0] == "Y" or contents[0:3] == "yes" or contents[0:3] == "YES":
 				os.system('python3 ezzz_tool.py')
 			elif contents[0] == "n" or contents[0] == "N" or contents[0:3] == "no" or contents[0:3] == "NO":
-				print("You need to accept agreement first to use the tool.")
+				print(color.YELLOW+color.BOLD+"You need to accept agreement first to use the tool.\n"+color.END)
 				os.system('rm -r .agrmnt.txt')
 		f.close()
 	else:
-		accept = input("\nEzzz tool is only for testing, education purposes and can only be used where strict consent has been given. Any coincidence because of using this tool represents only and only result of your actions. The author does not hold any responsibility for the illegal/unethical use of this tool. Do you accept this agreement? (Y/N) : ")
+		os.system('clear')
+		accept = input(color.RED+color.BOLD+"\nEzzz tool is only for testing, education purposes and can only be used where strict consent has been given. Any coincidence because of using this tool represents only and only result of your actions. The author does not hold any responsibility for the illegal/unethical use of this tool."+color.GREEN+"\n\nDo you accept this agreement? (Y/N) : "+color.END)
 		if accept != "y" and accept != "Y" and accept != "yes" and accept != "YES" and accept != "n" and accept != "N" and accept != "no" and accept != "NO":
 			check()
 		else:
