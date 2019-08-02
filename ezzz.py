@@ -52,7 +52,7 @@ def lsnr_mac():
 	os.system(cmnd)
 #-----------------------------------------------------
 def fileio():
-	yn = input(color.BLUE+color.BOLD+"Do you want to host/upload this upload to share it further? (y/n)\n"+color.END)	
+	yn = input(color.GREEN+color.BOLD+"Do you want to host/upload this upload to share it further? (y/n)\n"+color.END)	
 	if yn == 'y' or yn == 'Y' or yn == 'yes' or yn == 'YES':
 		if payload == 1:
 			path = "/root/Desktop/"+pname+".exe"
@@ -73,7 +73,8 @@ def fileio():
 	elif yn == 'n' or yn == 'N' or yn == 'no' or yn == 'NO':
 		return 0
 	else:
-		print(color.CYAN+color.BOLD+"LOL, What you really want to do?\nJust say"+color.GREEN+" YES"+color.END+" or"+color.RED+color.BOLD+" NO."+color.YELLOW+color.BOLD+" But you lost this chance, try again now."+color.END)
+		print(color.CYAN+color.BOLD+"LOL, What you really want to do?\nJust say"+color.GREEN+" YES"+color.END+" or"+color.RED+color.BOLD+" NO."+color.END)
+		fileio()
 #-----------------------------------------------------
 def cont_lsnr():
 	yn = str(input(color.GREEN+color.BOLD+"\nDo you want to start listener too? (y/n)\n"+color.END))
@@ -133,8 +134,8 @@ if val == 1:
 		payload_inpt()		
 		print(color.YELLOW+color.BOLD+"\nCreating Windows payload..."+color.END)
 		payload_win()
-		cont_lsnr()
 		fileio()
+		cont_lsnr()
 	elif payload == 2:
 		clear()
 		print(color.BLUE+color.BOLD+"You are at:\nEzzz >  1) Create Payload > 2) Android"+color.END)
@@ -142,6 +143,7 @@ if val == 1:
 		payload_inpt()
 		print(color.YELLOW+color.BOLD+"\nCreating Android payload..."+color.END)
 		payload_and()
+		fileio()
 		cont_lsnr()
 	elif payload == 3:
 		clear()
@@ -150,6 +152,7 @@ if val == 1:
 		payload_inpt()
 		print(color.YELLOW+color.BOLD+"\nCreating Linux payload..."+color.END)
 		payload_lnx()
+		fileio()
 		cont_lsnr()
 	elif payload == 4:
 		clear()
@@ -158,6 +161,7 @@ if val == 1:
 		payload_inpt()
 		print(color.YELLOW+color.BOLD+"\nCreating Mac payload..."+color.END)
 		payload_mac()
+		fileio()
 		cont_lsnr()
 	elif payload == 5:
 		clear()
