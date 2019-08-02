@@ -27,4 +27,4 @@ $ python3 ezzz.py
 - **Ezzz** tool allows to create payloads/backdoors without requirements of writting any commands.
 
 # Bugs and Improvements?
-- For any bug reporting or improvements, please submit an issue here.
+- For any bug reporting or improvements, please submit an issue [here](https://github.com/arshit09/Ezzz/issues/new "here").
