@@ -13,16 +13,16 @@ class color:
 os.system('resize -s 24 80 > /dev/null')
 #-----------------------------------------------------
 def check():
-	exst = str(os.path.exists('.agrmnt.txt'))
+	exst = str(os.path.exists('.agreement.txt'))
 	if exst == "True":
-		f = open(".agrmnt.txt","r")
+		f = open(".agreement.txt","r")
 		if f.mode =="r":
 			contents = f.read()
 			if contents[0] == "y" or contents[0] == "Y" or contents[0:3] == "yes" or contents[0:3] == "YES":
-				os.system('python3 ezzz_tool.py')
+				os.system('python3 main.py')
 			elif contents[0] == "n" or contents[0] == "N" or contents[0:3] == "no" or contents[0:3] == "NO":
 				print(color.YELLOW+color.BOLD+"You need to accept agreement first to use the tool.\n"+color.END)
-				os.system('rm -r .agrmnt.txt')
+				os.system('rm -r .agreement.txt')
 		f.close()
 	else:
 		os.system('clear')
@@ -30,7 +30,7 @@ def check():
 		if accept != "y" and accept != "Y" and accept != "yes" and accept != "YES" and accept != "n" and accept != "N" and accept != "no" and accept != "NO":
 			check()
 		else:
-			a = "touch .agrmnt.txt | echo "+accept+" > .agrmnt.txt"
+			a = "touch .agreement.txt | echo "+accept+" > .agreement.txt"
 			os.system(a)
 			check()
 check()
