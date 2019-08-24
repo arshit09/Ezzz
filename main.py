@@ -218,6 +218,14 @@ elif val == 2:
 		lsnr_mac()
 	elif val == 99:
 		exit
+elif val == 3:
+	clear()
+	print(color.BLUE+color.BOLD+"You are at:\nEzzz > [3] Other Useful Tools")
+	print(color.YELLOW+"\nOther useful tool is currently in developing mode :D\nStay tuned!\n")
+elif val == 4:
+	clear()
+	print(color.BLUE+color.BOLD+"You are at:\nEzzz > [4] Tools For Fun!")
+	print(color.YELLOW+"\nInteresting tools are in developing mode :D\nStay tuned!\n")
 elif val == 99:
 	exit
 else:
