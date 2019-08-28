@@ -5,7 +5,7 @@
 An Easy tool to craft payloads/backdoors.
 
 # Screenshot
-![Screenshot_1](https://raw.githubusercontent.com/arshit09/Ezzz/master/screenshot_1.jpg "SS")
+![Screenshot_1](https://raw.githubusercontent.com/arshit09/Ezzz/master/front.jpg "SS")
 
 # Getting Started
 ```
