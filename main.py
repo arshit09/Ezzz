@@ -52,7 +52,7 @@ def lsnr_mac():
 	os.system(cmnd)
 #-----------------------------------------------------
 def fileio():
-	yn = input(color.GREEN+color.BOLD+"Do you want to host/upload this upload to share it further? (y/n)\n"+color.END)	
+	yn = input(color.GREEN+color.BOLD+"Do you want to host/upload this payload to share it further? (y/n)\n"+color.END)	
 	if yn == 'y' or yn == 'Y' or yn == 'yes' or yn == 'YES':
 		if payload == 1:
 			path = "/root/Desktop/"+pname+".exe"
