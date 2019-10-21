@@ -23,7 +23,7 @@ $ python3 ezzz.py
 - Kali 2017.1 and above
 
 # Features
-- **Ezzz** tool allows to create payloads/backdoors without requirements of writting any commands.
+- **Ezzz** tool allows creating payloads/backdoors and auto-setup the listener without requirements of writing any commands. More functionality is currently being tested and not released yet.
 
 # Bugs and Improvements?
 - For any bug reporting or improvements, please submit an issue [here](https://github.com/arshit09/Ezzz/issues/new "here").
