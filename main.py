@@ -3,7 +3,7 @@ import sys
 def clear():
 	os.system('clear')
 clear()
-os.system('resize -s 24 80 > /dev/null')
+#os.system('resize -s 24 80 > /dev/null')
 #-----------------------------------------------------
 def localip():
 	os.system('hostname -I')
@@ -107,6 +107,7 @@ class color:
    END = '\033[0m'
 #-----------------------------------------------------
 print(color.GREEN+" _____\n| ____|____________\n|  _| |_  /_  /_  /\n| |___ / / / / / /_____ \n|_____/___/___/________>")
+print(color.RED + color.BOLD + "\nUSE THIS TOOL FOR EDUCATION PURPOSE ONLY")
 print(color.YELLOW + color.BOLD + "\n---------------------- Welcome to Ezzz ----------------------\n")
 print(color.GREEN + "[1] Create Payload")
 print("[2] Start Listener")
