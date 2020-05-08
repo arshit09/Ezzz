@@ -4,6 +4,9 @@
 
 An Easy tool to craft payloads/backdoors.
 
+# Tutorial
+https://www.youtube.com/watch?v=aOuGAIBY_fc&t=11s
+
 # Screenshot
 ![Screenshot_1](https://raw.githubusercontent.com/arshit09/Ezzz/master/front.jpg "SS")
 
