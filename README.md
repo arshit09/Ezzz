@@ -1,8 +1,9 @@
 # Ezzz - Kali Linux Tool
 
+An Easy tool to craft payloads/backdoors.
+
 **DISCLAIMER:** ***Ezzz tool is only for testing, education purposes and can only be used where strict consent has been given. Any coincidence because of using this tool represents only and only result of your actions. The author does not hold any responsibility for the illegal/unethical use of this tool.***
 
-An Easy tool to craft payloads/backdoors.
 
 # Tutorial
 https://www.youtube.com/watch?v=aOuGAIBY_fc&t=11s
